@@ -1,0 +1,11 @@
+---
+- name: 'Download Tableau Installer {{ tabl_uninstall_version }}'
+  win_get_url:
+    url: https://downloads.tableau.com/esdalt/2020.3.3/TableauServer-64bit-2020-3-3.exe
+    dest: C:\Tableau.exe
+
+- name: 'tableau uninstall old Version {{ tabl_uninstall_version }}'
+  win_package:
+    path: "{{ tableau_install_exe_path }}"
+    product_id: 'Tableau_Server_{{ tabl_uninstall_version }}'
+    arguments: '/uninstall /quiet INSTALLDIR="{{ tabl_install_dir }}" DATADIR="{{ tabl_data_dir }}" ACCEPTEULA=1'
