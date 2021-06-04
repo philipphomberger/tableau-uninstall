@@ -9,3 +9,8 @@
     path: "{{ tableau_install_exe_path }}"
     product_id: 'Tableau_Server_{{ tabl_uninstall_version }}'
     arguments: '/uninstall /quiet'
+
+- name: 'Remove Tableau Installer {{ tabl_uninstall_version }}'
+  win_file:
+    path: "{{ tableau_install_exe_path }}"
+    state: absent
