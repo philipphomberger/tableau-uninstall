@@ -8,4 +8,4 @@
   win_package:
     path: "{{ tableau_install_exe_path }}"
     product_id: 'Tableau_Server_{{ tabl_uninstall_version }}'
-    arguments: '/uninstall /quiet INSTALLDIR="{{ tabl_install_dir }}" DATADIR="{{ tabl_data_dir }}" ACCEPTEULA=1'
+    arguments: '/uninstall /quiet'
